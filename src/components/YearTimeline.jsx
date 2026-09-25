@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react'
 import { CATEGORY_STYLE } from '../lib/categories.js'
 import EventCard from './EventCard.jsx'
 
@@ -17,8 +18,47 @@ function summary(month, shown) {
  * Os meses vazios aparecem como um respiro na trilha - ver onde o ano aperta e
  * onde ele abre e justamente o que ajuda a se programar. Os meses ja vencidos
  * viram um unico marco no topo, para nao gastar a primeira tela com passado.
+ *
+ * O mes que esta no centro da tela fica em evidencia e os outros encolhem. O
+ * encolhimento e so transform e opacidade: nada de mudar altura durante a
+ * rolagem, senao a pagina briga com o dedo do usuario.
  */
 export default function YearTimeline({ months, eventsByMonth, savedIds, onOpen }) {
+  const [focused, setFocused] = useState(null)
+  const sectionRefs = useRef({})
+
+  useEffect(() => {
+    let frame = 0
+
+    // Fica em evidencia o mes que ocupa o centro da tela - nao o que comeca
+    // ali. Senao um mes vazio rouba o foco do mes cujo card esta a vista.
+    const pick = () => {
+      frame = 0
+      const middle = window.innerHeight / 2
+      let winner = null
+      for (const [key, node] of Object.entries(sectionRefs.current)) {
+        if (!node) continue
+        const { top, bottom } = node.getBoundingClientRect()
+        if (top <= middle && bottom > 0) winner = key
+        else if (top > middle && !winner) { winner = key; break }
+      }
+      if (winner) setFocused(winner)
+    }
+
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(pick)
+    }
+
+    pick()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      if (frame) cancelAnimationFrame(frame)
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
+  }, [months, eventsByMonth])
+
   if (!months.length) return null
 
   const past = months.filter((month) => month.isPast)
@@ -54,7 +94,9 @@ export default function YearTimeline({ months, eventsByMonth, savedIds, onOpen }
           <section
             key={month.key}
             className="year-month"
+            ref={(node) => { sectionRefs.current[month.key] = node }}
             data-month={month.key}
+            data-focus={focused === month.key}
             data-current={month.isCurrent}
             data-empty={events.length === 0}
           >

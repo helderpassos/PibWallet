@@ -24,6 +24,11 @@ alguem perceber que precisa se organizar antes. O mes atual fica verde e os
 meses ja vencidos viram um unico marco no topo, para nao gastar a primeira tela
 com passado.
 
+O mes que ocupa o centro da tela entra em evidencia - marco maior, titulo maior
+e card em cor cheia - enquanto os outros encolhem e desbotam. O encolhimento usa
+so `transform` e opacidade: mudar altura durante a rolagem faria a pagina pular
+debaixo do dedo.
+
 ## Rodando
 
 ```bash

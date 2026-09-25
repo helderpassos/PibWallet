@@ -368,3 +368,42 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   background: rgba(0, 0, 0, 0.14);
 }
 .year-gap { height: 16px; }
+
+/* --- mes em evidencia --- */
+/* Encolher usa so transform/opacidade: mudar altura durante a rolagem faria a
+   pagina pular debaixo do dedo. */
+.year-marker,
+.year-head-text strong,
+.year-head-text small,
+.year-item {
+  transition: transform 0.22s ease, opacity 0.22s ease,
+              width 0.22s ease, height 0.22s ease, font-size 0.22s ease;
+}
+
+.year-month[data-focus='false'] .year-marker {
+  width: 34px; height: 34px;
+  font-size: 11px;
+  margin-left: 5px;
+}
+.year-month[data-focus='false'] .year-head-text strong {
+  font-size: 15px;
+  color: var(--ink-soft);
+}
+.year-month[data-focus='false'] .year-head-text small { opacity: 0.7; }
+.year-month[data-focus='false'] .year-item {
+  transform: scale(0.93);
+  transform-origin: right center;
+  opacity: 0.55;
+}
+
+.year-month[data-focus='true'] .year-marker {
+  width: 52px; height: 52px;
+  margin-left: -4px;
+  font-size: 13px;
+}
+.year-month[data-focus='true'] .year-head-text strong { font-size: 20px; }
+.year-month[data-focus='true'] .year-head-text small { color: #5c5c5c; }
+
+@media (prefers-reduced-motion: reduce) {
+  .year-month[data-focus='false'] .year-item { transform: none; opacity: 0.7; }
+}
