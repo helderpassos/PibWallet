@@ -139,9 +139,9 @@ export default function App() {
                   </span>
                   <h2>{next.title}.</h2>
                   <span className="hero-meta">
-                    <span>Quando: <b>{rangeLabel(next.start, next.end)}</b></span>
-                    <span>Onde: <b>{next.location}</b></span>
-                    <span>{countdownLabel(next.start)}</span>
+                    <b>{rangeLabel(next.start, next.end)}</b>
+                    <span>{next.location}</span>
+                    <em>{countdownLabel(next.start)}</em>
                   </span>
                 </button>
               ) : null}

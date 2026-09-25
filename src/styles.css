@@ -137,52 +137,102 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   font-weight: 700;
 }
 .hero-meta {
-  display: flex; flex-wrap: wrap; gap: 16px;
+  display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
   font-size: 12px; font-weight: 600;
 }
-.hero-meta span { color: rgba(6, 33, 12, 0.7); }
 .hero-meta b { font-weight: 700; }
+.hero-meta span { color: rgba(6, 33, 12, 0.62); }
+.hero-meta span::before { content: '\00b7'; margin-right: 8px; }
+.hero-meta em {
+  font-style: normal;
+  background: var(--accent-ink);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
 
 /* --- card de evento --- */
 .event-card {
-  background: var(--card);
-  border-radius: var(--radius);
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 128px;
+  padding: 12px 14px;
+  border-radius: 22px;
   overflow: hidden;
   text-align: left;
-  width: 100%;
-  display: block;
-}
-.event-card header {
-  padding: 14px 16px 0;
-  display: flex; align-items: center; gap: 12px;
-}
-.event-card header .who { flex: 1; min-width: 0; }
-.event-card header .who p { margin: 0; font-size: 14px; font-weight: 600; }
-.event-card header .who small { color: var(--ink-soft); font-size: 13px; }
-.chip {
-  width: 32px; height: 32px; border-radius: 50%;
-  display: grid; place-items: center;
-  background: #efefef; font-size: 16px;
-}
-.event-body {
-  padding: 12px 16px 14px;
-  display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
-}
-.event-body h3 {
-  margin: 0;
-  font-size: 19px; line-height: 1.12;
-  letter-spacing: -0.03em; font-weight: 700;
-}
-.event-body .when { text-align: right; flex: none; line-height: 1; }
-.event-body .when strong { display: block; font-size: 25px; letter-spacing: -0.04em; }
-.event-body .when small { color: var(--ink-soft); font-size: 12px; display: block; }
-.event-cover {
-  height: 84px;
+  color: #fff;
   background: linear-gradient(135deg, var(--c1, #2b2b2b), var(--c2, #6b6b6b));
-  display: flex; align-items: flex-end;
-  padding: 10px 16px;
-  color: #fff; font-size: 11px; font-weight: 600;
-  letter-spacing: 0.04em; text-transform: uppercase;
+}
+.event-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.05) 62%);
+}
+.event-top {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.event-icon {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  font-size: 14px;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(2px);
+}
+.event-date {
+  margin-left: auto;
+  text-align: right;
+  line-height: 0.92;
+}
+.event-date strong {
+  display: block;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+}
+.event-date small {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.event-saved {
+  position: absolute;
+  top: 2px; right: -2px;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+}
+.event-foot {
+  position: absolute;
+  left: 14px; right: 14px; bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.event-foot strong {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.028em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.event-foot small {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.8;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* --- listas --- */
@@ -354,7 +404,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .year-dot {
   position: absolute;
   left: -42px;
-  top: 24px;
+  top: 20px;
   width: 12px; height: 12px;
   border-radius: 50%;
   background: var(--dot, var(--dark));
