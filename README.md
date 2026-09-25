@@ -9,7 +9,7 @@ eventos numa carteira e empurra o lembrete para o calendario do proprio celular.
 
 | Camada | O que faz | Funciona com o app fechado? |
 | --- | --- | --- |
-| Agenda do ano | Linha do tempo dos 12 meses + eventos agrupados por mes, com contagem regressiva | - |
+| Agenda do ano | Linha do tempo vertical do ano com os cards pendurados nela | - |
 | Carteira | Eventos salvos ficam no topo, offline | - |
 | Arquivo `.ics` | Joga o evento no calendario nativo com alarme de 7 e 1 dia antes | **Sim** |
 | Notificacao local | Avisa quem abre o app quando falta 30/7/1/0 dia | Nao |
@@ -17,10 +17,12 @@ eventos numa carteira e empurra o lembrete para o calendario do proprio celular.
 O `.ics` e o caminho confiavel: sem servidor de push, o navegador nao dispara
 notificacao com o app fechado. O calendario do celular dispara.
 
-A linha do tempo no topo da Agenda cobre o ano inteiro, inclusive os meses
-vazios e os que ja passaram: ver a forma do ano e o que faz alguem perceber que
-dezembro esta cheio e que precisa se organizar antes. A bolinha marca quantos
-eventos o mes tem, o mes atual ganha um halo e tocar num mes salta para ele.
+A Agenda e uma linha do tempo vertical: uma trilha na lateral esquerda com um
+marco por mes e os cards do evento pendurados nela. Os meses sem nada aparecem
+como um respiro na trilha - ver onde o ano aperta e onde ele abre e o que faz
+alguem perceber que precisa se organizar antes. O mes atual fica verde e os
+meses ja vencidos viram um unico marco no topo, para nao gastar a primeira tela
+com passado.
 
 ## Rodando
 
@@ -37,6 +39,7 @@ O service worker so entra em cena no build (`npm run preview` ou deploy).
 ```
 src/data/events.json   agenda do ano (editada pela secretaria)
 src/lib/dates.js       datas, agrupamento por mes, linha do tempo, contagem regressiva
+src/components/YearTimeline.jsx  trilha vertical do ano
 src/lib/ics.js         geracao do arquivo de calendario (RFC 5545)
 src/lib/notifications.js  permissao e disparo dos lembretes locais
 src/lib/sympla.js      cliente da integracao de ingressos
