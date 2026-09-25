@@ -275,3 +275,78 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+
+/* --- linha do tempo dos meses --- */
+.timeline {
+  position: sticky;
+  top: max(8px, env(safe-area-inset-top));
+  z-index: 5;
+  background: var(--dark);
+  border-radius: var(--radius);
+  padding: 18px 0 14px;
+  overflow: hidden;
+}
+.timeline-track {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  padding: 0 18px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+.timeline-track::-webkit-scrollbar { display: none; }
+.timeline-rail {
+  position: absolute;
+  left: 18px; right: 18px;
+  bottom: 27px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.14);
+}
+.timeline-month {
+  position: relative;
+  flex: none;
+  width: 46px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.45);
+}
+.timeline-count {
+  font-size: 11px;
+  font-weight: 700;
+  height: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.timeline-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+.timeline-month[data-empty='false'] .timeline-dot { background: #fff; }
+.timeline-month[data-current='true'] .timeline-dot {
+  box-shadow: 0 0 0 4px rgba(25, 240, 60, 0.25);
+}
+.timeline-month[data-active='true'] .timeline-dot {
+  background: var(--accent);
+  transform: scale(1.7);
+}
+.timeline-month[data-active='true'] .timeline-count { color: var(--accent); }
+.timeline-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.timeline-month[data-active='true'] .timeline-label { color: #fff; }
+.timeline-month[data-empty='true'] { color: rgba(255, 255, 255, 0.22); }
+.timeline-month:disabled { cursor: default; }
+
+.month-anchor { scroll-margin-top: 14px; }
+
+.timeline-month[data-past='true'] { color: rgba(255, 255, 255, 0.22); }
+.timeline-month[data-past='true'] .timeline-dot { background: rgba(255, 255, 255, 0.2); }
+.timeline-month[data-past='true'] .timeline-count { color: rgba(255, 255, 255, 0.22); }

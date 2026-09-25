@@ -62,3 +62,46 @@ export function groupByMonth(events) {
 
 export const byStart = (a, b) => toDate(a.start) - toDate(b.start)
 export const isUpcoming = (event, now = new Date()) => toDate(event.end || event.start) >= now
+
+export const monthKey = (value) => {
+  const d = toDate(value)
+  return `${d.getFullYear()}-${String(d.getMonth()).padStart(2, '0')}`
+}
+
+/**
+ * Linha do tempo continua do primeiro ao ultimo evento.
+ *
+ * Inclui os meses vazios de proposito: o buraco entre um evento e outro e
+ * informacao util para quem esta se programando.
+ */
+export function buildMonthTimeline(events, now = new Date()) {
+  if (!events.length) return []
+
+  const counts = new Map()
+  for (const event of events) {
+    const key = monthKey(event.start)
+    counts.set(key, (counts.get(key) || 0) + 1)
+  }
+
+  const first = toDate(events[0].start)
+  const last = toDate(events[events.length - 1].start)
+  const cursor = new Date(first.getFullYear(), first.getMonth(), 1)
+  const end = new Date(last.getFullYear(), last.getMonth(), 1)
+  const currentKey = monthKey(now)
+
+  const months = []
+  while (cursor <= end) {
+    const key = monthKey(cursor)
+    months.push({
+      key,
+      short: monthShort(cursor),
+      long: monthLong(cursor),
+      year: cursor.getFullYear(),
+      count: counts.get(key) || 0,
+      isCurrent: key === currentKey,
+      isPast: key < currentKey
+    })
+    cursor.setMonth(cursor.getMonth() + 1)
+  }
+  return months
+}

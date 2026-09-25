@@ -1,13 +1,14 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import data from './data/events.json'
 import { loadState, saveState } from './lib/storage.js'
 import { fetchSymplaEvents } from './lib/sympla.js'
 import { runDueReminders } from './lib/notifications.js'
 import {
   byStart, isUpcoming, groupByMonth, countdownLabel, daysUntil,
-  dayOfMonth, monthShort, rangeLabel
+  dayOfMonth, monthShort, rangeLabel, buildMonthTimeline
 } from './lib/dates.js'
 import EventCard from './components/EventCard.jsx'
+import MonthTimeline from './components/MonthTimeline.jsx'
 import EventDetail from './components/EventDetail.jsx'
 
 const TABS = [
@@ -23,6 +24,8 @@ export default function App() {
   const [state, setState] = useState(loadState)
   const [symplaEvents, setSymplaEvents] = useState([])
   const [installPrompt, setInstallPrompt] = useState(null)
+  const [activeMonth, setActiveMonth] = useState(null)
+  const monthRefs = useRef({})
 
   const events = useMemo(() => [...data.events].sort(byStart), [])
   const upcoming = useMemo(() => events.filter((event) => isUpcoming(event)), [events])
@@ -31,6 +34,14 @@ export default function App() {
     [upcoming, state.saved]
   )
   const openEvent = openId ? events.find((event) => event.id === openId) : null
+  const monthGroups = useMemo(() => groupByMonth(upcoming), [upcoming])
+  // A trilha cobre o ano inteiro, inclusive o que ja passou: ver a forma do ano
+  // e o que ajuda a se programar. So os meses ainda na lista sao clicaveis.
+  const timeline = useMemo(() => buildMonthTimeline(events), [events])
+  const selectableMonths = useMemo(
+    () => new Set(monthGroups.map((group) => group.key)),
+    [monthGroups]
+  )
 
   useEffect(() => { saveState(state) }, [state])
 
@@ -47,6 +58,33 @@ export default function App() {
     window.addEventListener('beforeinstallprompt', onPrompt)
     return () => window.removeEventListener('beforeinstallprompt', onPrompt)
   }, [])
+
+  // Acompanha qual mes esta na tela para destacar o marco certo na linha do tempo.
+  useEffect(() => {
+    if (tab !== 'agenda' || openEvent) return
+    const nodes = monthGroups
+      .map((group) => monthRefs.current[group.key])
+      .filter(Boolean)
+    if (!nodes.length) return
+    setActiveMonth((current) => current || monthGroups[0].key)
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0]
+        if (visible) setActiveMonth(visible.target.dataset.month)
+      },
+      { rootMargin: '-10% 0px -70% 0px', threshold: 0 }
+    )
+    nodes.forEach((node) => observer.observe(node))
+    return () => observer.disconnect()
+  }, [tab, openEvent, monthGroups])
+
+  const goToMonth = (key) => {
+    setActiveMonth(key)
+    monthRefs.current[key]?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
 
   const toggleSave = (id) =>
     setState((prev) => {
@@ -160,8 +198,19 @@ export default function App() {
           {tab === 'agenda' ? (
             <>
               <p className="section-title">Agenda {data.church.year}</p>
-              {groupByMonth(upcoming).map((group) => (
-                <div key={group.key}>
+              <MonthTimeline
+                months={timeline}
+                activeKey={activeMonth}
+                selectable={selectableMonths}
+                onSelect={goToMonth}
+              />
+              {monthGroups.map((group) => (
+                <div
+                  key={group.key}
+                  className="month-anchor"
+                  data-month={group.key}
+                  ref={(node) => { monthRefs.current[group.key] = node }}
+                >
                   <p className="section-title">{group.label}</p>
                   {group.events.map((event) => (
                     <EventCard key={event.id} event={event} saved={Boolean(state.saved[event.id])} onOpen={open} />

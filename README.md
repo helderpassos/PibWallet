@@ -9,13 +9,18 @@ eventos numa carteira e empurra o lembrete para o calendario do proprio celular.
 
 | Camada | O que faz | Funciona com o app fechado? |
 | --- | --- | --- |
-| Agenda do ano | Todos os eventos, agrupados por mes, com contagem regressiva | - |
+| Agenda do ano | Linha do tempo dos 12 meses + eventos agrupados por mes, com contagem regressiva | - |
 | Carteira | Eventos salvos ficam no topo, offline | - |
 | Arquivo `.ics` | Joga o evento no calendario nativo com alarme de 7 e 1 dia antes | **Sim** |
 | Notificacao local | Avisa quem abre o app quando falta 30/7/1/0 dia | Nao |
 
 O `.ics` e o caminho confiavel: sem servidor de push, o navegador nao dispara
 notificacao com o app fechado. O calendario do celular dispara.
+
+A linha do tempo no topo da Agenda cobre o ano inteiro, inclusive os meses
+vazios e os que ja passaram: ver a forma do ano e o que faz alguem perceber que
+dezembro esta cheio e que precisa se organizar antes. A bolinha marca quantos
+eventos o mes tem, o mes atual ganha um halo e tocar num mes salta para ele.
 
 ## Rodando
 
@@ -31,7 +36,7 @@ O service worker so entra em cena no build (`npm run preview` ou deploy).
 
 ```
 src/data/events.json   agenda do ano (editada pela secretaria)
-src/lib/dates.js       datas, agrupamento por mes, contagem regressiva
+src/lib/dates.js       datas, agrupamento por mes, linha do tempo, contagem regressiva
 src/lib/ics.js         geracao do arquivo de calendario (RFC 5545)
 src/lib/notifications.js  permissao e disparo dos lembretes locais
 src/lib/sympla.js      cliente da integracao de ingressos
