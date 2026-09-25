@@ -20,11 +20,18 @@
       "description": "Quatro dias de comunhao, louvor e descanso com toda a familia. Inclui hospedagem, cinco refeicoes por dia e programacao infantil paralela.",
       "requiresTicket": true,
       "price": "A partir de R$ 380",
-      "sympla": { "eventId": null, "url": "https://www.sympla.com.br/" },
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
       "openRegistrationAt": "2025-11-01T09:00:00-03:00",
       "closeRegistrationAt": "2026-02-01T23:59:00-03:00",
       "capacity": 220,
-      "tags": ["hospedagem", "familia", "inscricao paga"]
+      "tags": [
+        "hospedagem",
+        "familia",
+        "inscricao paga"
+      ]
     },
     {
       "id": "conferencia-missoes",
@@ -39,8 +46,14 @@
       "description": "Tres noites com missionarios enviados pela igreja, relatorios de campo e o desafio anual de ofertas missionarias.",
       "requiresTicket": false,
       "price": "Entrada gratuita",
-      "sympla": { "eventId": null, "url": null },
-      "tags": ["gratuito", "aberto a comunidade"]
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "gratuito",
+        "aberto a comunidade"
+      ]
     },
     {
       "id": "vigilia-jovens",
@@ -55,8 +68,14 @@
       "description": "Louvor, intercessao e cafe da manha coletivo ao amanhecer. Traga um agasalho e um item para o cafe compartilhado.",
       "requiresTicket": false,
       "price": "Entrada gratuita",
-      "sympla": { "eventId": null, "url": null },
-      "tags": ["jovens", "madrugada"]
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "jovens",
+        "madrugada"
+      ]
     },
     {
       "id": "encontro-casais",
@@ -71,11 +90,17 @@
       "description": "Palestras, dinamicas e tempo livre para o casal. Vagas limitadas e inscricoes por casal.",
       "requiresTicket": true,
       "price": "R$ 690 por casal",
-      "sympla": { "eventId": null, "url": "https://www.sympla.com.br/" },
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
       "openRegistrationAt": "2026-02-01T09:00:00-03:00",
       "closeRegistrationAt": "2026-05-10T23:59:00-03:00",
       "capacity": 60,
-      "tags": ["casais", "vagas limitadas"]
+      "tags": [
+        "casais",
+        "vagas limitadas"
+      ]
     },
     {
       "id": "festa-junina",
@@ -90,8 +115,14 @@
       "description": "Quadrilha, barracas e comidas tipicas. A renda das barracas vai para a cesta basica do bairro.",
       "requiresTicket": false,
       "price": "Entrada com 1 kg de alimento",
-      "sympla": { "eventId": null, "url": null },
-      "tags": ["beneficente", "aberto a comunidade"]
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "beneficente",
+        "aberto a comunidade"
+      ]
     },
     {
       "id": "acampamento-adolescentes",
@@ -106,11 +137,17 @@
       "description": "Cinco dias de gincanas, estudos biblicos e esportes para adolescentes de 12 a 17 anos. Transporte saindo da igreja.",
       "requiresTicket": true,
       "price": "R$ 450",
-      "sympla": { "eventId": null, "url": "https://www.sympla.com.br/" },
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
       "openRegistrationAt": "2026-04-01T09:00:00-03:00",
       "closeRegistrationAt": "2026-06-30T23:59:00-03:00",
       "capacity": 120,
-      "tags": ["12 a 17 anos", "transporte incluso"]
+      "tags": [
+        "12 a 17 anos",
+        "transporte incluso"
+      ]
     },
     {
       "id": "escola-biblica-ferias",
@@ -125,10 +162,16 @@
       "description": "Cinco tardes de historias, oficinas e musica para criancas de 4 a 11 anos. Inscricao gratuita, mas com vaga garantida por ordem de chegada.",
       "requiresTicket": true,
       "price": "Gratuito com inscricao",
-      "sympla": { "eventId": null, "url": "https://www.sympla.com.br/" },
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
       "openRegistrationAt": "2026-06-15T09:00:00-03:00",
       "capacity": 150,
-      "tags": ["4 a 11 anos", "gratuito"]
+      "tags": [
+        "4 a 11 anos",
+        "gratuito"
+      ]
     },
     {
       "id": "semana-da-biblia",
@@ -143,8 +186,14 @@
       "description": "Cinco noites de exposicao biblica com professor convidado. Material de apoio impresso entregue no primeiro dia.",
       "requiresTicket": false,
       "price": "Entrada gratuita",
-      "sympla": { "eventId": null, "url": null },
-      "tags": ["ensino", "material impresso"]
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "ensino",
+        "material impresso"
+      ]
     },
     {
       "id": "congresso-mulheres",
@@ -159,11 +208,211 @@
       "description": "Plenarias, oficinas e almoco coletivo. Inscricao inclui kit e almoco.",
       "requiresTicket": true,
       "price": "R$ 95",
-      "sympla": { "eventId": null, "url": "https://www.sympla.com.br/" },
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
       "openRegistrationAt": "2026-07-01T09:00:00-03:00",
       "closeRegistrationAt": "2026-09-25T23:59:00-03:00",
       "capacity": 400,
-      "tags": ["kit incluso", "almoco incluso"]
+      "tags": [
+        "kit incluso",
+        "almoco incluso"
+      ]
+    },
+    {
+      "subtitle": "Primeiro domingo",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "mensal"
+      ],
+      "id": "culto-gratidao-out",
+      "title": "Culto de Acao de Gracas",
+      "category": "Culto",
+      "ministry": "Pastoral",
+      "start": "2026-10-04T18:00:00-03:00",
+      "end": "2026-10-04T20:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Culto mensal de gratidao com testemunhos da igreja."
+    },
+    {
+      "subtitle": "Tarde recreativa",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "aberto a comunidade",
+        "criancas"
+      ],
+      "id": "dia-das-criancas",
+      "title": "Festa do Dia das Criancas",
+      "category": "Infantil",
+      "ministry": "Ministerio Infantil",
+      "start": "2026-10-11T15:00:00-03:00",
+      "end": "2026-10-11T18:00:00-03:00",
+      "location": "Patio da igreja",
+      "description": "Brinquedos, pipoca e teatro infantil. Traga os amiguinhos do bairro."
+    },
+    {
+      "subtitle": "Mordomia crista",
+      "allDay": false,
+      "requiresTicket": true,
+      "price": "Gratuito com inscricao",
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
+      "tags": [
+        "gratuito",
+        "vagas limitadas"
+      ],
+      "id": "seminario-financas",
+      "title": "Seminario de Financas",
+      "category": "Ensino",
+      "ministry": "Ministerio de Ensino",
+      "start": "2026-10-17T09:00:00-03:00",
+      "end": "2026-10-17T13:00:00-03:00",
+      "location": "Salao social",
+      "description": "Orcamento familiar, quitacao de dividas e generosidade. Material de apoio incluso.",
+      "capacity": 120
+    },
+    {
+      "subtitle": "31 de outubro",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [],
+      "id": "culto-reforma",
+      "title": "Culto da Reforma",
+      "category": "Culto",
+      "ministry": "Pastoral",
+      "start": "2026-10-31T19:00:00-03:00",
+      "end": "2026-10-31T21:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Culto historico com pregacao sobre as cinco solas."
+    },
+    {
+      "subtitle": "Novos membros",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "familia convidada"
+      ],
+      "id": "batismo-novembro",
+      "title": "Culto de Batismo",
+      "category": "Culto",
+      "ministry": "Pastoral",
+      "start": "2026-11-08T18:00:00-03:00",
+      "end": "2026-11-08T20:30:00-03:00",
+      "location": "Templo sede",
+      "description": "Batismo dos concluintes da classe de novos convertidos."
+    },
+    {
+      "subtitle": "Acao social de fim de ano",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "beneficente"
+      ],
+      "id": "bazar-solidario",
+      "title": "Bazar Solidario",
+      "category": "Comunidade",
+      "ministry": "Acao Social",
+      "start": "2026-11-14T09:00:00-03:00",
+      "end": "2026-11-14T16:00:00-03:00",
+      "location": "Salao social",
+      "description": "Roupas, moveis e brinquedos a preco simbolico. A renda vira cesta de Natal."
+    },
+    {
+      "subtitle": "Planejamento 2027",
+      "allDay": false,
+      "requiresTicket": true,
+      "price": "R$ 40",
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
+      "tags": [
+        "lideranca",
+        "almoco incluso"
+      ],
+      "id": "encontro-lideres",
+      "title": "Encontro de Lideres",
+      "category": "Ensino",
+      "ministry": "Pastoral",
+      "start": "2026-11-21T08:00:00-03:00",
+      "end": "2026-11-21T17:00:00-03:00",
+      "location": "Chacara Monte Sinai, Atibaia",
+      "description": "Dia de planejamento com todos os lideres de ministerio. Almoco incluso.",
+      "capacity": 80
+    },
+    {
+      "subtitle": "Noite de oracao",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "jovens"
+      ],
+      "id": "vigilia-gratidao",
+      "title": "Vigilia de Gratidao",
+      "category": "Juventude",
+      "ministry": "Ministerio de Jovens",
+      "start": "2026-11-27T21:00:00-03:00",
+      "end": "2026-11-28T02:00:00-03:00",
+      "location": "Salao social",
+      "description": "Noite de louvor e intercessao pelo ano que termina."
+    },
+    {
+      "subtitle": "Jantar da igreja",
+      "allDay": false,
+      "requiresTicket": true,
+      "price": "R$ 25 por pessoa",
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
+      "tags": [
+        "amigo secreto",
+        "jantar"
+      ],
+      "id": "ceia-natal-familia",
+      "title": "Ceia de Natal das Familias",
+      "category": "Familia",
+      "ministry": "Ministerio de Familias",
+      "start": "2026-12-05T19:00:00-03:00",
+      "end": "2026-12-05T23:00:00-03:00",
+      "location": "Salao social",
+      "description": "Jantar comunitario com amigo secreto. Cada familia leva um prato.",
+      "capacity": 250
     },
     {
       "id": "cantata-natal",
@@ -178,10 +427,38 @@
       "description": "Apresentacao do coral com orquestra. Lugares marcados por retirada antecipada de ingresso gratuito.",
       "requiresTicket": true,
       "price": "Ingresso gratuito",
-      "sympla": { "eventId": null, "url": "https://www.sympla.com.br/" },
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
       "openRegistrationAt": "2026-11-01T09:00:00-03:00",
       "capacity": 800,
-      "tags": ["lugar marcado", "gratuito"]
+      "tags": [
+        "lugar marcado",
+        "gratuito"
+      ]
+    },
+    {
+      "subtitle": "Acao no bairro",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "voluntariado",
+        "beneficente"
+      ],
+      "id": "entrega-cestas",
+      "title": "Entrega das Cestas de Natal",
+      "category": "Comunidade",
+      "ministry": "Acao Social",
+      "start": "2026-12-19T09:00:00-03:00",
+      "end": "2026-12-19T13:00:00-03:00",
+      "location": "Bairro Vila Nova",
+      "description": "Entrega das cestas montadas com a renda do bazar. Voluntarios bem-vindos."
     },
     {
       "id": "ceia-fim-de-ano",
@@ -196,8 +473,412 @@
       "description": "Culto de acao de gracas com Santa Ceia e virada do ano em oracao.",
       "requiresTicket": false,
       "price": "Entrada gratuita",
-      "sympla": { "eventId": null, "url": null },
-      "tags": ["ceia", "virada do ano"]
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "ceia",
+        "virada do ano"
+      ]
+    },
+    {
+      "subtitle": "Primeiro culto do ano",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [],
+      "id": "culto-ano-novo",
+      "title": "Culto de Ano Novo",
+      "category": "Culto",
+      "ministry": "Pastoral",
+      "start": "2027-01-03T18:00:00-03:00",
+      "end": "2027-01-03T20:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Culto de consagracao do ano com leitura do lema anual."
+    },
+    {
+      "subtitle": "Comeco do ano",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "cinco noites"
+      ],
+      "id": "semana-oracao",
+      "title": "Semana de Oracao",
+      "category": "Ensino",
+      "ministry": "Pastoral",
+      "start": "2027-01-18T19:30:00-03:00",
+      "end": "2027-01-22T21:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Cinco noites de oracao dirigida pelos ministerios da casa."
+    },
+    {
+      "subtitle": "Bencao dos estudantes",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "criancas",
+        "kit escolar"
+      ],
+      "id": "volta-as-aulas",
+      "title": "Culto de Volta as Aulas",
+      "category": "Infantil",
+      "ministry": "Ministerio Infantil",
+      "start": "2027-01-31T10:00:00-03:00",
+      "end": "2027-01-31T12:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Oracao pelos estudantes e entrega do kit escolar."
+    },
+    {
+      "subtitle": "Acampamento da familia PIB",
+      "allDay": false,
+      "requiresTicket": true,
+      "price": "A partir de R$ 400",
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
+      "tags": [
+        "hospedagem",
+        "familia",
+        "inscricao paga"
+      ],
+      "id": "retiro-carnaval-27",
+      "title": "Retiro de Carnaval",
+      "category": "Retiro",
+      "ministry": "Ministerio de Familias",
+      "start": "2027-02-06T07:00:00-03:00",
+      "end": "2027-02-09T16:00:00-03:00",
+      "location": "Chacara Monte Sinai, Atibaia",
+      "description": "Quatro dias de comunhao, louvor e descanso com toda a familia. Inclui hospedagem e programacao infantil paralela.",
+      "openRegistrationAt": "2026-11-01T09:00:00-03:00",
+      "closeRegistrationAt": "2027-01-24T23:59:00-03:00",
+      "capacity": 220
+    },
+    {
+      "subtitle": "Manha especial",
+      "allDay": false,
+      "requiresTicket": true,
+      "price": "R$ 30",
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
+      "tags": [
+        "cafe da manha"
+      ],
+      "id": "dia-da-mulher",
+      "title": "Cafe do Dia da Mulher",
+      "category": "Familia",
+      "ministry": "Ministerio de Mulheres",
+      "start": "2027-02-27T09:00:00-03:00",
+      "end": "2027-02-27T12:00:00-03:00",
+      "location": "Salao social",
+      "description": "Cafe da manha com palestra e musica. Traga uma convidada.",
+      "capacity": 180
+    },
+    {
+      "subtitle": "Ate os confins da terra",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "gratuito",
+        "aberto a comunidade"
+      ],
+      "id": "conferencia-missoes-27",
+      "title": "Conferencia de Missoes",
+      "category": "Conferencia",
+      "ministry": "Junta de Missoes",
+      "start": "2027-03-19T19:30:00-03:00",
+      "end": "2027-03-21T21:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Tres noites com missionarios enviados pela igreja e o desafio anual de ofertas."
+    },
+    {
+      "subtitle": "Maos a obra",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "voluntariado"
+      ],
+      "id": "mutirao-limpeza",
+      "title": "Mutirao de Reforma do Templo",
+      "category": "Comunidade",
+      "ministry": "Patrimonio",
+      "start": "2027-03-27T08:00:00-03:00",
+      "end": "2027-03-27T17:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Pintura, jardinagem e pequenos reparos. Leve luva e disposicao."
+    },
+    {
+      "subtitle": "Ceia do Senhor",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "ceia"
+      ],
+      "id": "ceia-pascoa",
+      "title": "Culto da Pascoa",
+      "category": "Culto",
+      "ministry": "Pastoral",
+      "start": "2027-03-28T18:00:00-03:00",
+      "end": "2027-03-28T20:30:00-03:00",
+      "location": "Templo sede",
+      "description": "Culto de Pascoa com Santa Ceia e apresentacao do coral."
+    },
+    {
+      "subtitle": "Noite inteira de oracao",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "jovens",
+        "madrugada"
+      ],
+      "id": "vigilia-jovens-27",
+      "title": "Vigilia de Jovens",
+      "category": "Juventude",
+      "ministry": "Ministerio de Jovens",
+      "start": "2027-04-10T22:00:00-03:00",
+      "end": "2027-04-11T05:00:00-03:00",
+      "location": "Salao social",
+      "description": "Louvor, intercessao e cafe da manha coletivo ao amanhecer."
+    },
+    {
+      "subtitle": "Fim de semana",
+      "allDay": false,
+      "requiresTicket": true,
+      "price": "R$ 60",
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
+      "tags": [
+        "12 a 17 anos"
+      ],
+      "id": "congresso-adolescentes",
+      "title": "Congresso de Adolescentes",
+      "category": "Juventude",
+      "ministry": "Ministerio de Adolescentes",
+      "start": "2027-04-24T14:00:00-03:00",
+      "end": "2027-04-25T20:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Dois dias de preletores, bandas e oficinas para a galera de 12 a 17 anos.",
+      "capacity": 300
+    },
+    {
+      "subtitle": "Homenagem",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [],
+      "id": "dia-das-maes",
+      "title": "Culto do Dia das Maes",
+      "category": "Familia",
+      "ministry": "Ministerio de Familias",
+      "start": "2027-05-09T10:00:00-03:00",
+      "end": "2027-05-09T12:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Culto com homenagem as maes e lembrancinha na saida."
+    },
+    {
+      "subtitle": "Fim de semana a dois",
+      "allDay": false,
+      "requiresTicket": true,
+      "price": "R$ 720 por casal",
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
+      "tags": [
+        "casais",
+        "vagas limitadas"
+      ],
+      "id": "encontro-casais-27",
+      "title": "Encontro de Casais",
+      "category": "Familia",
+      "ministry": "Ministerio de Casais",
+      "start": "2027-05-21T18:00:00-03:00",
+      "end": "2027-05-23T15:00:00-03:00",
+      "location": "Hotel Fazenda Recanto",
+      "description": "Palestras, dinamicas e tempo livre para o casal. Vagas limitadas.",
+      "openRegistrationAt": "2027-02-01T09:00:00-03:00",
+      "closeRegistrationAt": "2027-05-09T23:59:00-03:00",
+      "capacity": 60
+    },
+    {
+      "subtitle": "Festa junina beneficente",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada com 1 kg de alimento",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "beneficente",
+        "aberto a comunidade"
+      ],
+      "id": "festa-junina-27",
+      "title": "Arraia da PIB",
+      "category": "Comunidade",
+      "ministry": "Acao Social",
+      "start": "2027-06-19T16:00:00-03:00",
+      "end": "2027-06-19T22:00:00-03:00",
+      "location": "Patio da igreja",
+      "description": "Quadrilha, barracas e comidas tipicas. A renda vai para a cesta basica do bairro."
+    },
+    {
+      "subtitle": "Ferias de julho",
+      "allDay": false,
+      "requiresTicket": true,
+      "price": "R$ 470",
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
+      "tags": [
+        "12 a 17 anos",
+        "transporte incluso"
+      ],
+      "id": "acampamento-adolescentes-27",
+      "title": "Acampamento de Adolescentes",
+      "category": "Juventude",
+      "ministry": "Ministerio de Adolescentes",
+      "start": "2027-07-12T08:00:00-03:00",
+      "end": "2027-07-16T17:00:00-03:00",
+      "location": "Acampamento Vale Verde",
+      "description": "Cinco dias de gincanas, estudos biblicos e esportes. Transporte saindo da igreja.",
+      "openRegistrationAt": "2027-04-01T09:00:00-03:00",
+      "closeRegistrationAt": "2027-06-30T23:59:00-03:00",
+      "capacity": 120
+    },
+    {
+      "subtitle": "Semana das criancas",
+      "allDay": false,
+      "requiresTicket": true,
+      "price": "Gratuito com inscricao",
+      "sympla": {
+        "eventId": null,
+        "url": "https://www.sympla.com.br/"
+      },
+      "tags": [
+        "4 a 11 anos",
+        "gratuito"
+      ],
+      "id": "ebf-27",
+      "title": "EBF - Escola Biblica de Ferias",
+      "category": "Infantil",
+      "ministry": "Ministerio Infantil",
+      "start": "2027-07-26T14:00:00-03:00",
+      "end": "2027-07-30T17:00:00-03:00",
+      "location": "Espaco Kids",
+      "description": "Cinco tardes de historias, oficinas e musica para criancas de 4 a 11 anos.",
+      "openRegistrationAt": "2027-06-15T09:00:00-03:00",
+      "capacity": 150
+    },
+    {
+      "subtitle": "Homenagem",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "churrasco"
+      ],
+      "id": "culto-dia-dos-pais",
+      "title": "Culto do Dia dos Pais",
+      "category": "Familia",
+      "ministry": "Ministerio de Familias",
+      "start": "2027-08-08T10:00:00-03:00",
+      "end": "2027-08-08T12:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Culto com homenagem aos pais e churrasco depois no patio."
+    },
+    {
+      "subtitle": "Estudo intensivo",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "ensino",
+        "material impresso"
+      ],
+      "id": "semana-biblia-27",
+      "title": "Semana da Biblia",
+      "category": "Ensino",
+      "ministry": "Ministerio de Ensino",
+      "start": "2027-09-13T19:30:00-03:00",
+      "end": "2027-09-17T21:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Cinco noites de exposicao biblica com professor convidado."
+    },
+    {
+      "subtitle": "78 anos",
+      "allDay": false,
+      "requiresTicket": false,
+      "price": "Entrada gratuita",
+      "sympla": {
+        "eventId": null,
+        "url": null
+      },
+      "tags": [
+        "almoco comunitario",
+        "dia inteiro"
+      ],
+      "id": "aniversario-igreja",
+      "title": "Aniversario da Igreja",
+      "category": "Conferencia",
+      "ministry": "Pastoral",
+      "start": "2027-09-26T09:00:00-03:00",
+      "end": "2027-09-26T21:00:00-03:00",
+      "location": "Templo sede",
+      "description": "Dia inteiro de celebracao: culto matinal, almoco comunitario e culto festivo a noite."
     }
   ]
 }

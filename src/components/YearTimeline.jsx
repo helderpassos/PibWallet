@@ -4,6 +4,10 @@ import EventCard from './EventCard.jsx'
 
 const plural = (n) => `${n} evento${n > 1 ? 's' : ''}`
 
+/** O ano so aparece quando nao e o corrente, senao vira ruido em toda linha. */
+const monthTitle = (month, thisYear) =>
+  month.year === thisYear ? month.long : `${month.long} ${month.year}`
+
 /** Resumo do mes: o que ainda vem, o que ja passou ou o silencio. */
 function summary(month, shown) {
   if (shown) return plural(shown)
@@ -25,6 +29,7 @@ function summary(month, shown) {
  */
 export default function YearTimeline({ months, eventsByMonth, savedIds, onOpen }) {
   const [focused, setFocused] = useState(null)
+  const thisYear = new Date().getFullYear()
   const sectionRefs = useRef({})
 
   useEffect(() => {
@@ -78,8 +83,8 @@ export default function YearTimeline({ months, eventsByMonth, savedIds, onOpen }
             <span className="year-head-text">
               <strong>
                 {past.length > 1
-                  ? `${past[0].long} a ${past[past.length - 1].long}`
-                  : past[0].long}
+                  ? `${past[0].long} a ${monthTitle(past[past.length - 1], thisYear)}`
+                  : monthTitle(past[0], thisYear)}
               </strong>
               <small>{pastCount ? `${plural(pastCount)} ja aconteceram` : 'sem eventos'}</small>
             </span>
@@ -103,7 +108,7 @@ export default function YearTimeline({ months, eventsByMonth, savedIds, onOpen }
             <header className="year-head">
               <span className="year-marker" aria-hidden="true">{month.short}</span>
               <span className="year-head-text">
-                <strong>{month.long}</strong>
+                <strong>{monthTitle(month, thisYear)}</strong>
                 <small>{summary(month, events.length)}</small>
               </span>
             </header>

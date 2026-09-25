@@ -169,7 +169,7 @@ export default function App() {
 
           {tab === 'agenda' ? (
             <>
-              <p className="section-title">Agenda {data.church.year}</p>
+              <p className="section-title">Agenda dos proximos 12 meses</p>
               <YearTimeline
                 months={timeline}
                 eventsByMonth={eventsByMonth}

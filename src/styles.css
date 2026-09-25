@@ -153,35 +153,35 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   display: block;
 }
 .event-card header {
-  padding: 18px 20px 0;
+  padding: 14px 16px 0;
   display: flex; align-items: center; gap: 12px;
 }
 .event-card header .who { flex: 1; min-width: 0; }
 .event-card header .who p { margin: 0; font-size: 14px; font-weight: 600; }
 .event-card header .who small { color: var(--ink-soft); font-size: 13px; }
 .chip {
-  width: 38px; height: 38px; border-radius: 50%;
+  width: 32px; height: 32px; border-radius: 50%;
   display: grid; place-items: center;
   background: #efefef; font-size: 16px;
 }
 .event-body {
-  padding: 18px 20px 20px;
+  padding: 12px 16px 14px;
   display: flex; align-items: flex-start; justify-content: space-between; gap: 16px;
 }
 .event-body h3 {
   margin: 0;
-  font-size: 22px; line-height: 1.1;
+  font-size: 19px; line-height: 1.12;
   letter-spacing: -0.03em; font-weight: 700;
 }
 .event-body .when { text-align: right; flex: none; line-height: 1; }
-.event-body .when strong { display: block; font-size: 30px; letter-spacing: -0.04em; }
+.event-body .when strong { display: block; font-size: 25px; letter-spacing: -0.04em; }
 .event-body .when small { color: var(--ink-soft); font-size: 12px; display: block; }
 .event-cover {
-  height: 150px;
+  height: 84px;
   background: linear-gradient(135deg, var(--c1, #2b2b2b), var(--c2, #6b6b6b));
   display: flex; align-items: flex-end;
-  padding: 14px 18px;
-  color: #fff; font-size: 12px; font-weight: 600;
+  padding: 10px 16px;
+  color: #fff; font-size: 11px; font-weight: 600;
   letter-spacing: 0.04em; text-transform: uppercase;
 }
 
@@ -354,7 +354,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .year-dot {
   position: absolute;
   left: -42px;
-  top: 30px;
+  top: 24px;
   width: 12px; height: 12px;
   border-radius: 50%;
   background: var(--dot, var(--dark));

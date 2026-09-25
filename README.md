@@ -42,7 +42,7 @@ O service worker so entra em cena no build (`npm run preview` ou deploy).
 ## Estrutura
 
 ```
-src/data/events.json   agenda do ano (editada pela secretaria)
+src/data/events.json   agenda dos proximos 12 meses (editada pela secretaria)
 src/lib/dates.js       datas, agrupamento por mes, linha do tempo, contagem regressiva
 src/components/YearTimeline.jsx  trilha vertical do ano
 src/lib/ics.js         geracao do arquivo de calendario (RFC 5545)
