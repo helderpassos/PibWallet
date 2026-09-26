@@ -23,8 +23,11 @@ buscar eventos de terceiros.
 3. **CORS.** A chamada nao sai do navegador para o dominio da API; precisa de um
    intermediario do mesmo dominio do app.
 
-Por isso o app chama `/api/sympla/events`, um proxy proprio
-(`api/sympla.js`, pronto para Vercel/Netlify Functions) que injeta o `s_token`.
+Por isso o app chama `/api/sympla/events`, um proxy proprio (`api/sympla.js`)
+que injeta o `s_token`. Ele esta escrito no formato do Vercel - assinatura
+`(req, res)`. Para Netlify Functions v2 ou Cloudflare Workers, a funcao precisa
+ser reescrita para `(req, context)` devolvendo um `Response`; a logica e a
+mesma, muda so a casca.
 
 ## Degradacao sem proxy
 

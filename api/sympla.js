@@ -1,8 +1,12 @@
 /**
- * Proxy da API da Sympla - funcao serverless (Vercel / Netlify Functions).
+ * Proxy da API da Sympla - funcao serverless no formato Vercel.
  *
  * Mantem o `s_token` fora do navegador e resolve o CORS. Configure a variavel
  * de ambiente SYMPLA_TOKEN no painel do provedor.
+ *
+ * A assinatura `(req, res)` e a do Vercel. Para rodar no Netlify (Functions v2)
+ * ou no Cloudflare Workers, a funcao precisa ser reescrita para receber
+ * `(req, context)` e devolver um `Response`.
  *
  * Rotas:
  *   GET /api/sympla/events            -> eventos do organizador
