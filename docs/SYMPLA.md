@@ -23,11 +23,14 @@ buscar eventos de terceiros.
 3. **CORS.** A chamada nao sai do navegador para o dominio da API; precisa de um
    intermediario do mesmo dominio do app.
 
-Por isso o app chama `/api/sympla/events`, um proxy proprio (`api/sympla.js`)
-que injeta o `s_token`. Ele esta escrito no formato do Vercel - assinatura
-`(req, res)`. Para Netlify Functions v2 ou Cloudflare Workers, a funcao precisa
-ser reescrita para `(req, context)` devolvendo um `Response`; a logica e a
-mesma, muda so a casca.
+Por isso o app chama `/api/sympla/events`, um proxy proprio
+(`netlify/functions/sympla.mjs`) que injeta o `s_token`. Ele e uma Netlify
+Function v2: recebe um `Request` e devolve um `Response`, e declara a propria
+rota em `export const config = { path: '/api/sympla/*' }`.
+
+Para Vercel ou Cloudflare Workers a logica e a mesma, muda so a casca: o Vercel
+espera `(req, res)` com `res.status().json()`, e o Workers exporta um objeto com
+`fetch(request, env)`.
 
 ## Degradacao sem proxy
 
@@ -47,8 +50,9 @@ a compra acontece no site da Sympla, nao dentro do PWA.
 ## Como ligar
 
 1. Gere a chave no painel do produtor Sympla.
-2. Defina `SYMPLA_TOKEN` nas variaveis de ambiente do deploy (nunca em `.env`
-   commitado, nunca com prefixo `VITE_`).
-3. Publique `api/sympla.js` como funcao serverless em `/api/sympla/*`.
+2. Defina `SYMPLA_TOKEN` em Site settings -> Environment variables (nunca em
+   `.env` commitado, nunca com prefixo `VITE_`, que iria para o bundle).
+3. Faca o deploy no Netlify. A funcao ja declara a rota `/api/sympla/*`; o
+   `netlify.toml` na raiz cuida do build e do fallback de SPA.
 4. Opcional: preencha `sympla.eventId` em `src/data/events.json` para casar os
    eventos por id em vez de por titulo.

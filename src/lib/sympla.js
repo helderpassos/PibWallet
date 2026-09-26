@@ -7,7 +7,7 @@
  *  - a chamada nao pode sair do navegador (o dominio da API nao libera CORS).
  *
  * Por isso o app fala com um proxy proprio (`/api/sympla/events`), que guarda o
- * token no servidor. Veja `api/sympla.js` e `docs/SYMPLA.md`.
+ * token no servidor. Veja `netlify/functions/sympla.mjs` e `docs/SYMPLA.md`.
  *
  * Sem proxy configurado, o app degrada para o link direto do evento no Sympla,
  * que e o caminho garantido para a compra do ingresso. */

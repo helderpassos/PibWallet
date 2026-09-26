@@ -1,0 +1,25 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# A rota /api/sympla/* e declarada pela propria funcao (config.path em
+# netlify/functions/sympla.mjs). Esta regra e o fallback de SPA e vem por
+# ultimo: sem ela, abrir uma URL direta do app daria 404.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# O service worker nunca pode ficar preso em cache, senao o app nao atualiza.
+[[headers]]
+  for = "/sw.js"
+  [headers.values]
+    cache-control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    cache-control = "public, max-age=31536000, immutable"

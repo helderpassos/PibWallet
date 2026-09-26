@@ -35,7 +35,15 @@ debaixo do dedo.
 npm install
 npm run dev      # http://localhost:5173
 npm run build && npm run preview
+npm test         # testa o proxy da Sympla com o fetch mockado
 ```
+
+## Deploy
+
+Netlify: conecte o repositorio e pronto - o `netlify.toml` ja define build,
+publish e o fallback de SPA. Para ligar a integracao de ingressos, defina
+`SYMPLA_TOKEN` em Site settings -> Environment variables. Sem essa variavel a
+funcao responde 501 e o app usa o link direto do evento.
 
 O service worker so entra em cena no build (`npm run preview` ou deploy).
 
@@ -49,7 +57,8 @@ src/lib/ics.js         geracao do arquivo de calendario (RFC 5545)
 src/lib/notifications.js  permissao e disparo dos lembretes locais
 src/lib/sympla.js      cliente da integracao de ingressos
 src/lib/storage.js     carteira e lembretes em localStorage
-api/sympla.js          proxy serverless que guarda o token da Sympla
+netlify/functions/sympla.mjs  proxy que guarda o token da Sympla
+netlify.toml           build, fallback de SPA e cache do deploy
 public/sw.js           cache do shell + offline
 ```
 

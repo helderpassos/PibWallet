@@ -5,8 +5,8 @@
 - **Commite e publique direto no `main`.** O dono do repositorio pediu isso
   explicitamente: nada de branch de feature nem pull request, a menos que ele
   peca na hora.
-- Antes de publicar, rode `npm run build`. O projeto nao tem suite de testes
-  automatizada; a verificacao e o build passar e o app subir em `npm run preview`.
+- Antes de publicar, rode `npm run build` e `npm test`. O `npm test` cobre so o
+  proxy da Sympla; a interface e verificada abrindo `npm run preview`.
 
 ## Projeto
 
@@ -19,7 +19,8 @@ Pontos que nao sao obvios pelo codigo:
 - O arquivo `.ics` e o mecanismo principal de lembrete, nao as notificacoes.
   Sem servidor de push o navegador nao avisa com o app fechado; o calendario
   nativo avisa.
-- O token da Sympla nunca pode ir para o bundle. Ele vive no proxy serverless
-  em `api/sympla.js`, e o app degrada para o link direto quando o proxy nao
-  existe.
+- O token da Sympla nunca pode ir para o bundle. Ele vive na Netlify Function
+  em `netlify/functions/sympla.mjs`, e o app degrada para o link direto quando
+  o proxy nao responde.
+- O deploy e no Netlify, configurado em `netlify.toml`.
 - A agenda e editada a mao em `src/data/events.json`.
