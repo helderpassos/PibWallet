@@ -4,3 +4,6 @@ dist
 .env.local
 .DS_Store
 *.log
+
+# bundle gerado para entrega manual quando o push esta bloqueado
+*.bundle
