@@ -156,83 +156,66 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   position: relative;
   display: block;
   width: 100%;
-  height: 128px;
-  padding: 12px 14px;
-  border-radius: 22px;
+  height: 92px;
+  border-radius: 20px;
   overflow: hidden;
   text-align: left;
   color: #fff;
-  background: linear-gradient(135deg, var(--c1, #2b2b2b), var(--c2, #6b6b6b));
+  /* Cor de fundo enquanto a imagem carrega, e ultimo recurso se ela faltar. */
+  background: linear-gradient(135deg, var(--c1, #1c1c1c), var(--c2, #6b6b6b));
+}
+.event-card[data-featured='true'] {
+  height: 196px;
+  border-radius: 24px;
+}
+.event-img {
+  position: absolute;
+  inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
 }
 .event-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0.05) 62%);
-}
-.event-top {
-  position: relative;
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-}
-.event-icon {
-  width: 30px; height: 30px;
-  border-radius: 50%;
-  display: grid; place-items: center;
-  font-size: 14px;
-  background: rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(2px);
-}
-.event-date {
-  margin-left: auto;
-  text-align: right;
-  line-height: 0.92;
-}
-.event-date strong {
-  display: block;
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: -0.045em;
-}
-.event-date small {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  opacity: 0.85;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12) 70%);
 }
 .event-saved {
   position: absolute;
-  top: 2px; right: -2px;
-  width: 8px; height: 8px;
+  top: 12px; right: 12px;
+  width: 9px; height: 9px;
   border-radius: 50%;
   background: var(--accent);
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
 }
 .event-foot {
   position: absolute;
-  left: 14px; right: 14px; bottom: 12px;
+  left: 16px; right: 16px; bottom: 13px;
   display: flex;
   flex-direction: column;
-  gap: 1px;
+  gap: 3px;
+}
+.event-date {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  opacity: 0.85;
 }
 .event-foot strong {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 700;
-  line-height: 1.12;
-  letter-spacing: -0.028em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.event-foot small {
-  font-size: 11px;
-  font-weight: 600;
-  opacity: 0.8;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+.event-card[data-featured='true'] .event-foot { left: 20px; right: 20px; bottom: 18px; }
+.event-card[data-featured='true'] .event-date { font-size: 11px; }
+.event-card[data-featured='true'] .event-foot strong {
+  font-size: 27px;
+  letter-spacing: -0.04em;
 }
 
 /* --- listas --- */
@@ -404,7 +387,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .year-dot {
   position: absolute;
   left: -42px;
-  top: 20px;
+  top: 16px;
   width: 12px; height: 12px;
   border-radius: 50%;
   background: var(--dot, var(--dark));

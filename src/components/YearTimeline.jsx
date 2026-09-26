@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { CATEGORY_STYLE } from '../lib/categories.js'
+import { styleFor } from '../lib/categories.js'
 import EventCard from './EventCard.jsx'
 
 const plural = (n) => `${n} evento${n > 1 ? 's' : ''}`
@@ -27,7 +27,7 @@ function summary(month, shown) {
  * encolhimento e so transform e opacidade: nada de mudar altura durante a
  * rolagem, senao a pagina briga com o dedo do usuario.
  */
-export default function YearTimeline({ months, eventsByMonth, savedIds, onOpen }) {
+export default function YearTimeline({ months, eventsByMonth, savedIds, featuredId, onOpen }) {
   const [focused, setFocused] = useState(null)
   const thisYear = new Date().getFullYear()
   const sectionRefs = useRef({})
@@ -119,9 +119,14 @@ export default function YearTimeline({ months, eventsByMonth, savedIds, onOpen }
                   <span
                     className="year-dot"
                     aria-hidden="true"
-                    style={{ '--dot': (CATEGORY_STYLE[event.category] || CATEGORY_STYLE.default).c2 }}
+                    style={{ '--dot': styleFor(event).c2 }}
                   />
-                  <EventCard event={event} saved={savedIds.has(event.id)} onOpen={onOpen} />
+                  <EventCard
+                    event={event}
+                    saved={savedIds.has(event.id)}
+                    featured={event.id === featuredId}
+                    onOpen={onOpen}
+                  />
                 </div>
               ))
             ) : (

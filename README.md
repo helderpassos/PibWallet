@@ -73,5 +73,20 @@ direto do evento e nada quebra.
 
 Edite `src/data/events.json` e publique. Campos por evento: `id`, `title`,
 `subtitle`, `category`, `ministry`, `start`, `end`, `location`, `description`,
-`price`, `requiresTicket`, `tags`, `capacity` e `sympla: { eventId, url }`.
-As categorias controlam icone e cor da capa em `src/lib/categories.js`.
+`price`, `requiresTicket`, `tags`, `capacity`, `image` e
+`sympla: { eventId, url }`.
+
+### Foto do evento
+
+O card e a propria foto. A ordem e:
+
+1. `image` do evento, se preenchido - use o caminho de um arquivo em
+   `public/img/` (por exemplo `"image": "/img/retiro-2027.jpg"`);
+2. senao, a capa da categoria, definida em `src/lib/categories.js`;
+3. senao, o degrade da categoria, que tambem aparece enquanto a foto carrega.
+
+As capas em `public/img/cover-*.png` sao geradas, nao sao fotos: existem para o
+app nao nascer sem imagem. Troque por fotos reais da igreja assim que houver.
+Formato que cai bem: paisagem, algo como 640x400, com o assunto na metade de
+cima - a metade de baixo fica sob o escurecimento que garante a leitura do
+titulo. Comprima antes de subir; a imagem entra no cache offline do app.

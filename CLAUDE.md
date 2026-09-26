@@ -24,3 +24,8 @@ Pontos que nao sao obvios pelo codigo:
   o proxy nao responde.
 - O deploy e no Netlify, configurado em `netlify.toml`.
 - A agenda e editada a mao em `src/data/events.json`.
+- As capas em `public/img/cover-*.png` sao geradas, nao sao fotos. Elas entram
+  no cache offline, entao qualquer imagem nova precisa ser comprimida antes de
+  entrar no repositorio.
+- So o evento mais proximo da data recebe o card alto (`featured`); todos os
+  outros usam a altura reduzida.

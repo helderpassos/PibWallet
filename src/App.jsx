@@ -73,7 +73,11 @@ export default function App() {
 
   const next = upcoming[0]
   const nextSaved = savedEvents[0]
-  const soon = upcoming.filter((event) => daysUntil(event.start) <= 45)
+  // O proximo evento ja e o card verde do topo, entao a lista comeca do
+  // seguinte - senao ele apareceria duas vezes na mesma tela.
+  const depois = upcoming.filter(
+    (event) => event.id !== next?.id && daysUntil(event.start) <= 45
+  )
 
   async function install() {
     if (!installPrompt) return
@@ -153,9 +157,9 @@ export default function App() {
                 </div>
               ) : null}
 
-              <p className="section-title">Nos proximos 45 dias</p>
-              {soon.length ? (
-                soon.map((event) => (
+              <p className="section-title">Depois desse</p>
+              {depois.length ? (
+                depois.map((event) => (
                   <EventCard key={event.id} event={event} saved={Boolean(state.saved[event.id])} onOpen={open} />
                 ))
               ) : (
@@ -174,6 +178,7 @@ export default function App() {
                 months={timeline}
                 eventsByMonth={eventsByMonth}
                 savedIds={savedIds}
+                featuredId={next?.id}
                 onOpen={open}
               />
             </>
