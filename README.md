@@ -70,6 +70,16 @@ organizador e o token nao pode ficar no navegador. O detalhe esta em
 [docs/SYMPLA.md](docs/SYMPLA.md). Sem o proxy configurado, o app usa o link
 direto do evento e nada quebra.
 
+## Icone
+
+`public/icons/icon.svg` e a fonte: fundo em degrade verde com o glifo
+`wallet-minimal` do [Lucide](https://lucide.dev) (licenca ISC). Os PNGs do
+manifesto sao renderizacoes desse SVG em 192 e 512, mais uma versao maskable
+com o glifo menor, para caber na zona segura que o Android recorta.
+
+O glifo usa o verde quase preto do app: sobre o degrade o contraste fica entre
+8,7:1 e 4,5:1, legivel de ponta a ponta.
+
 ## Atualizando a agenda
 
 Edite `src/data/events.json` e publique. Campos por evento: `id`, `title`,

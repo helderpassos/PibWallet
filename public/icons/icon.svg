@@ -1,8 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="112" fill="#000000"/>
-  <rect x="96" y="150" width="320" height="230" rx="40" fill="#C8FF00"/>
-  <rect x="96" y="212" width="320" height="26" fill="#000000"/>
-  <circle cx="330" cy="300" r="30" fill="#000000"/>
-  <rect x="240" y="96" width="32" height="96" rx="16" fill="#C8FF00"/>
-  <rect x="208" y="120" width="96" height="32" rx="16" fill="#C8FF00"/>
+<!-- Glifo: "wallet-minimal" do Lucide (lucide.dev), ISC. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="PIB Wallet">
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#00e85a"/>
+      <stop offset="1" stop-color="#00a63a"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="114" fill="url(#fundo)"/>
+  <g transform="translate(94 94) scale(13.5)"
+     fill="none" stroke="#00320f" stroke-width="2"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 14h.01"/>
+    <path d="M7 7h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14"/>
+  </g>
 </svg>
