@@ -1,14 +1,18 @@
 /* PIB Wallet - service worker
-   Cache-first para o app shell, network-first para dados. */
-const VERSION = 'pibwallet-v1'
-const SHELL = [
-  '/',
-  '/index.html',
-  '/manifest.webmanifest',
-  '/icons/icon.svg',
-  '/icons/icon-192.png',
-  '/icons/icon-512.png'
-]
+   Cache-first para o app shell, network-first para dados.
+
+   __BUILD_VERSION__ e trocado no build pelo hash do conteudo publicado
+   (plugin em vite.config.js). Sem isso o nome do cache nunca mudava e o
+   app podia ficar preso numa versao antiga. Builds identicos geram o mesmo
+   hash, entao um deploy sem mudanca nao invalida o cache a toa. */
+const VERSION = 'pibwallet-__BUILD_VERSION__'
+/* O marcador abaixo vira, no build, a lista do que foi publicado - inclusive
+   os JS e CSS de nome com hash, que o service worker nao teria como adivinhar.
+   Sem eles no precache, quem visitava pela primeira vez e ficava sem rede em
+   seguida abria o app quebrado: o service worker so passa a interceptar
+   depois que assume o controle, entao os arquivos da primeira carga nunca
+   chegavam ao cache. */
+const SHELL = ['/', '/index.html', ...__BUILD_ASSETS__]
 
 self.addEventListener('install', (event) => {
   event.waitUntil(

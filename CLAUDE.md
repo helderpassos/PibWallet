@@ -7,6 +7,9 @@
   peca na hora.
 - Antes de publicar, rode `npm run build` e `npm test`. O `npm test` cobre so o
   proxy da Sympla; a interface e verificada abrindo `npm run preview`.
+- **Nada alem das funcoes dentro de `netlify/functions/`.** O Netlify empacota
+  cada arquivo daquela pasta como uma funcao, entao um teste ou um utilitario
+  ali derruba o deploy inteiro. Testes ficam em `tests/`.
 
 ## Projeto
 

@@ -2,7 +2,7 @@
  * Teste da funcao do proxy da Sympla, com o fetch para a Sympla mockado.
  * Rode com: npm test
  */
-const mod = new URL('./sympla.mjs', import.meta.url).href
+const mod = new URL('../netlify/functions/sympla.mjs', import.meta.url).href
 const pass = [], fail = []
 const check = (n, ok, extra='') => (ok?pass:fail).push(n + (extra?` -> ${extra}`:''))
 
