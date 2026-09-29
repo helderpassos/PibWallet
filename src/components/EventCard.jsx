@@ -5,8 +5,8 @@ import { coverFor, styleFor } from '../lib/categories.js'
  * Card do evento: a foto e o card inteiro.
  *
  * Duas alturas. O evento mais proximo da data vem como `featured` e ocupa o
- * dobro; todo o resto fica baixo, para caber muita coisa na tela. Dentro do
- * card so entram dia e titulo - o resto vive no detalhe do evento.
+ * dobro; todo o resto fica em 72 px, para caber muita coisa na tela. Dentro
+ * do card so entram dia e titulo - o resto vive no detalhe do evento.
  */
 export default function EventCard({ event, saved, featured = false, onOpen }) {
   const style = styleFor(event)

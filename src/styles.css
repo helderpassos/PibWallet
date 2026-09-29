@@ -156,8 +156,8 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   position: relative;
   display: block;
   width: 100%;
-  height: 92px;
-  border-radius: 20px;
+  height: 72px;
+  border-radius: 18px;
   overflow: hidden;
   text-align: left;
   color: #fff;
@@ -165,8 +165,8 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
   background: linear-gradient(135deg, var(--c1, #1c1c1c), var(--c2, #6b6b6b));
 }
 .event-card[data-featured='true'] {
-  height: 196px;
-  border-radius: 24px;
+  height: 150px;
+  border-radius: 22px;
 }
 .event-img {
   position: absolute;
@@ -178,11 +178,11 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .event-shade {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.12) 70%);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.14) 78%);
 }
 .event-saved {
   position: absolute;
-  top: 12px; right: 12px;
+  top: 10px; right: 10px;
   width: 9px; height: 9px;
   border-radius: 50%;
   background: var(--accent);
@@ -190,32 +190,34 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 }
 .event-foot {
   position: absolute;
-  left: 16px; right: 16px; bottom: 13px;
+  left: 14px; right: 14px; bottom: 11px;
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2px;
 }
 .event-date {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   letter-spacing: 0.14em;
   opacity: 0.85;
 }
 .event-foot strong {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.03em;
+  /* Uma linha no card baixo: com 72 px nao cabe uma segunda sem espremer. */
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.event-card[data-featured='true'] .event-foot { left: 20px; right: 20px; bottom: 18px; }
-.event-card[data-featured='true'] .event-date { font-size: 11px; }
+.event-card[data-featured='true'] .event-foot { left: 18px; right: 18px; bottom: 16px; }
+.event-card[data-featured='true'] .event-date { font-size: 10px; }
 .event-card[data-featured='true'] .event-foot strong {
-  font-size: 27px;
+  font-size: 23px;
   letter-spacing: -0.04em;
+  -webkit-line-clamp: 2;
 }
 
 /* --- listas --- */
@@ -387,7 +389,7 @@ button { font: inherit; color: inherit; cursor: pointer; border: 0; background: 
 .year-dot {
   position: absolute;
   left: -42px;
-  top: 16px;
+  top: 12px;
   width: 12px; height: 12px;
   border-radius: 50%;
   background: var(--dot, var(--dark));
