@@ -59,7 +59,8 @@ src/lib/sympla.js      cliente da integracao de ingressos
 src/lib/storage.js     carteira e lembretes em localStorage
 netlify/functions/sympla.mjs  proxy que guarda o token da Sympla
 netlify.toml           build, fallback de SPA e cache do deploy
-public/sw.js           cache do shell + offline
+public/sw.js           cache do shell + offline (versao e lista de arquivos
+                       carimbadas no build por um plugin em vite.config.js)
 ```
 
 ## Sympla

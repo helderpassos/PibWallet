@@ -26,6 +26,12 @@ Pontos que nao sao obvios pelo codigo:
   em `netlify/functions/sympla.mjs`, e o app degrada para o link direto quando
   o proxy nao responde.
 - O deploy e no Netlify, configurado em `netlify.toml`.
+- O service worker e carimbado no build (plugin em `vite.config.js`): o nome do
+  cache leva o hash do conteudo publicado e a lista de arquivos entra no
+  precache. Duas armadilhas ja pagas: sem o precache dos JS/CSS de nome com
+  hash, quem visita pela primeira vez e fica sem rede abre o app em branco; e o
+  `caches.match` precisa de `ignoreVary`, porque os assets vem com
+  `Vary: Origin` e o script de modulo do Vite manda o header `Origin`.
 - A agenda e editada a mao em `src/data/events.json`.
 - As capas em `public/img/cover-*.png` sao geradas, nao sao fotos. Elas entram
   no cache offline, entao qualquer imagem nova precisa ser comprimida antes de

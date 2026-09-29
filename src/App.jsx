@@ -4,7 +4,7 @@ import { loadState, saveState } from './lib/storage.js'
 import { fetchSymplaEvents } from './lib/sympla.js'
 import { runDueReminders } from './lib/notifications.js'
 import {
-  byStart, isUpcoming, groupByMonth, countdownLabel, daysUntil,
+  byStart, isUpcoming, groupByMonth, countdownLabel,
   dayOfMonth, monthShort, rangeLabel, buildMonthTimeline
 } from './lib/dates.js'
 import EventCard from './components/EventCard.jsx'
@@ -75,9 +75,11 @@ export default function App() {
   const nextSaved = savedEvents[0]
   // O proximo evento ja e o card verde do topo, entao a lista comeca do
   // seguinte - senao ele apareceria duas vezes na mesma tela.
-  const depois = upcoming.filter(
-    (event) => event.id !== next?.id && daysUntil(event.start) <= 45
-  )
+  //
+  // Sao os tres seguintes, e nao uma janela de dias: com a agenda enxuta de
+  // marcos anuais, um corte por prazo deixava a aba Hoje vazia na maior parte
+  // do ano.
+  const depois = upcoming.filter((event) => event.id !== next?.id).slice(0, 3)
 
   async function install() {
     if (!installPrompt) return

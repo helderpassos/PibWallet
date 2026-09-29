@@ -28,6 +28,13 @@ self.addEventListener('activate', (event) => {
   )
 })
 
+/* ignoreVary e obrigatorio aqui: servidores e CDNs respondem os assets com
+   `Vary: Origin`, e o Vite marca o script de modulo como `crossorigin`, entao a
+   requisicao da pagina leva o header `Origin` e a do precache nao. Sem isso o
+   match falha justamente nos arquivos que fazem o app funcionar, e o app abre
+   em branco quando esta offline. */
+const MATCH = { ignoreVary: true }
+
 self.addEventListener('fetch', (event) => {
   const { request } = event
   if (request.method !== 'GET') return
@@ -37,13 +44,13 @@ self.addEventListener('fetch', (event) => {
   // Navegacoes: rede primeiro, cai para o shell em cache quando offline.
   if (request.mode === 'navigate') {
     event.respondWith(
-      fetch(request).catch(() => caches.match('/index.html'))
+      fetch(request).catch(() => caches.match('/index.html', MATCH))
     )
     return
   }
 
   event.respondWith(
-    caches.match(request).then((cached) => {
+    caches.match(request, MATCH).then((cached) => {
       const fresh = fetch(request)
         .then((response) => {
           if (response && response.ok) {
