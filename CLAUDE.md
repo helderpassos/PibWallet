@@ -11,6 +11,16 @@
   cada arquivo daquela pasta como uma funcao, entao um teste ou um utilitario
   ali derruba o deploy inteiro. Testes ficam em `tests/`.
 
+## Visual
+
+Linguagem inspirada no Cash App: verde saturado (`--accent`), preto puro sobre
+branco, numerais gigantes, pilulas e superficies cinza-claro bem arredondadas.
+Os tokens vivem no `:root` de `src/styles.css`.
+
+Texto sobre o verde usa `--accent-ink` (verde quase preto), nunca branco:
+branco sobre esse verde da 1,98:1 de contraste, ilegivel; o verde-escuro da
+7,26:1.
+
 ## Projeto
 
 PWA (React + Vite, sem framework de rotas) que funciona como carteira dos

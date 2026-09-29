@@ -4,7 +4,7 @@ import { loadState, saveState } from './lib/storage.js'
 import { fetchSymplaEvents } from './lib/sympla.js'
 import { runDueReminders } from './lib/notifications.js'
 import {
-  byStart, isUpcoming, groupByMonth, countdownLabel,
+  byStart, isUpcoming, groupByMonth, countdownLabel, daysUntil,
   dayOfMonth, monthShort, rangeLabel, buildMonthTimeline
 } from './lib/dates.js'
 import EventCard from './components/EventCard.jsx'
@@ -138,16 +138,26 @@ export default function App() {
                 <button className="hero" onClick={() => open(next)}>
                   <span className="hero-head">
                     <span className="hero-logo">{data.church.shortName}</span>
-                    <span>
-                      <p>{data.church.name}</p>
-                      <small>Proximo da agenda</small>
-                    </span>
+                    <span className="hero-tag">Proximo evento</span>
                   </span>
-                  <h2>{next.title}.</h2>
+
+                  {/* O numerao e o elemento central: a contagem regressiva e a
+                      unica informacao que muda todo dia e a que faz a pessoa
+                      se mexer. */}
+                  <span className="hero-count">
+                    {daysUntil(next.start) <= 0 ? (
+                      <strong className="hero-today">hoje</strong>
+                    ) : (
+                      <>
+                        <strong>{daysUntil(next.start)}</strong>
+                        <em>{daysUntil(next.start) === 1 ? 'dia' : 'dias'}</em>
+                      </>
+                    )}
+                  </span>
+
                   <span className="hero-meta">
-                    <b>{rangeLabel(next.start, next.end)}</b>
-                    <span>{next.location}</span>
-                    <em>{countdownLabel(next.start)}</em>
+                    <b>{next.title}</b>
+                    <span>{rangeLabel(next.start, next.end)} &middot; {next.location}</span>
                   </span>
                 </button>
               ) : null}
